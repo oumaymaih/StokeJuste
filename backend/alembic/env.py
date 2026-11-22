@@ -14,6 +14,7 @@ from app.models.lot_stock import LotStock
 from app.models.mouvement_stock import MouvementStock
 from app.models.vente import Vente
 from app.models.ligne_vente import LigneVente
+from app.models.historique_vente import HistoriqueVente 
 
 config = context.config
 
