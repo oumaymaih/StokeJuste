@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { getHealth } from "../services/api";
+import LoginPage from "../features/auth/LoginPage";
+import SignupPage from "../features/auth/SignupPage";
 
 function HomePage() {
   const [message, setMessage] = useState("");
@@ -20,6 +22,7 @@ function HomePage() {
       <p>Gestion du stock et réduction du gaspillage.</p>
 
       <nav>
+        <Link to="/connexion">Connexion</Link>{" "}
         <Link to="/produits">Produits</Link>{" "}
         <Link to="/alertes">Alertes</Link>
       </nav>
@@ -45,6 +48,8 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/connexion" element={<LoginPage />} />
+      <Route path="/inscription" element={<SignupPage />} />
       <Route path="/produits" element={<ProductsPage />} />
       <Route path="/alertes" element={<AlertsPage />} />
     </Routes>
