@@ -5,3 +5,11 @@ sqlalchemy
 psycopg[binary]
 alembic
 pydantic-settings
+
+# Module de prediction des ventes
+python-dotenv
+pandas
+numpy
+scikit-learn
+xgboost==3.4.1
+joblib

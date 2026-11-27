@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { getHealth } from "../services/api";
 
+// Import du module de prediction
+import PredictionPage from "../features/prediction/PredictionPage";
+
 function HomePage() {
   const [message, setMessage] = useState("");
 
@@ -21,7 +24,8 @@ function HomePage() {
 
       <nav>
         <Link to="/produits">Produits</Link>{" "}
-        <Link to="/alertes">Alertes</Link>
+        <Link to="/alertes">Alertes</Link>{" "}
+        <Link to="/prediction">Prédiction des ventes</Link>
       </nav>
 
       <button onClick={testBackend}>
@@ -47,6 +51,10 @@ export default function AppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/produits" element={<ProductsPage />} />
       <Route path="/alertes" element={<AlertsPage />} />
+
+      {/* Route du module de prediction */}
+      <Route path="/prediction" element={<PredictionPage />} />
+
     </Routes>
   );
 }
